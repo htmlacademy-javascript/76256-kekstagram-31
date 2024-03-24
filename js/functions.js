@@ -5,8 +5,8 @@ const checkPalindrome = (someString) => {
   const normalizeString = someString.replaceAll(' ', '').toLowerCase();
   let reverseString = '';
 
-  for (let symbolIndex = normalizeString.length - 1; symbolIndex >= 0; symbolIndex--) {
-    reverseString += normalizeString[symbolIndex];
+  for (let i = normalizeString.length - 1; i >= 0; i--) {
+    reverseString += normalizeString[i];
   }
 
   return normalizeString === reverseString;
@@ -17,11 +17,13 @@ const getNumber = (someString) => {
   let numberSeries = '';
   someString = someString.toString();
 
-  for (let symbolIndex = 0; symbolIndex <= someString.length - 1; symbolIndex++) {
-    if (Number.isNaN(parseInt(someString[symbolIndex], 10))) {
+  for (let i = 0; i <= someString.length - 1; i++) {
+    const convertSymbol = parseInt(someString[i], 10);
+
+    if (Number.isNaN(convertSymbol)) {
       numberSeries += '';
     } else {
-      numberSeries += parseInt(someString[symbolIndex], 10);
+      numberSeries += convertSymbol;
     }
   }
 
