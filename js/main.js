@@ -79,3 +79,4 @@ const createPhotoDescriptions = () => {
 };
 
 const photoDescripions = Array.from({length: 25}, createPhotoDescriptions());
+photoDescripions();
