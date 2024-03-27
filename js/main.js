@@ -66,12 +66,13 @@ const createPhotoDescriptions = () => {
   let id = 1;
 
   return () => {
-    const photoDescripion = {};
-    photoDescripion.id = id;
-    photoDescripion.url = `photo/${id}.jpg`;
-    photoDescripion.description = getRandomArrayElement(SET_DESCRIPTIONS);
-    photoDescripion.likes = getRandomInteger(15, 200);
-    photoDescripion.comments = Array.from({length: getRandomInteger(0, 30)}, createComments);
+    const photoDescripion = {
+      id: id,
+      url: `photo/${id}.jpg`,
+      description: getRandomArrayElement(SET_DESCRIPTIONS),
+      likes: getRandomInteger(15, 200),
+      comments: Array.from({length: getRandomInteger(0, 30)}, createComments)
+    };
     id += 1;
     return photoDescripion;
   };
